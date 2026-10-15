@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#121116">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<title>Bot Studio 💟</title>
+<title>💟Bot Studio</title>
 <style>
 :root{color-scheme:dark;--bg:#121116;--panel:#1b191f;--panel2:#211e26;--panel3:#29252e;--line:#39313f;--text:#f4f0f5;--muted:#aaa2ae;--accent:#b79fc7;--pink:#d596f7;--soft:rgba(183,159,199,.17);--warning:#ffb36f;--success:#8bdbc0;font:16px system-ui,-apple-system,"Segoe UI",sans-serif}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);min-width:0}button,input,textarea,select{font:inherit}button{cursor:pointer}button:disabled{opacity:.4;cursor:not-allowed}button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px solid var(--pink);outline-offset:2px}a{color:var(--accent)}[hidden]{display:none!important}
@@ -15,11 +15,36 @@ label.fieldlabel{display:block;font-size:12px;font-weight:800;color:#e0d4e5;marg
 .tabs{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding:2px 0 9px;margin:10px 0;position:sticky;top:79px;z-index:25;background:var(--bg)}.tabs::-webkit-scrollbar{display:none}.tab{white-space:nowrap;flex:0 0 auto;border:1px solid var(--line);background:var(--panel);border-radius:10px;padding:10px 12px;color:var(--muted);font-size:12px;font-weight:700}.tab.active{background:var(--soft);border-color:#7b6486;color:#ffe9ff}.editorheading{display:flex;gap:12px;align-items:center;margin-bottom:9px}.edavatar{border:1px solid var(--line);border-radius:12px;height:80px;width:80px;flex:none;background:#28232d;display:grid;place-items:center;font-size:42px;overflow:hidden}.edavatar img{width:100%;height:100%;object-fit:cover}.edtitle{min-width:0;flex:1}.edtitle h1{margin:0 0 4px;overflow-wrap:anywhere}.edtitle .hint{margin:0}.inline-warning{padding:10px 12px;border-radius:11px;border:1px solid #95633d;background:#433023;color:#ffcfaa;font-size:12px;margin:9px 0}.successbox{padding:10px 12px;border-radius:11px;border:1px solid #507e6a;background:#23382f;color:#aee9cf;font-size:12px;margin:9px 0}.block{padding:12px;border:1px solid var(--line);background:var(--panel2);border-radius:12px;margin:10px 0}.blockhead{display:flex;align-items:center;justify-content:space-between;gap:9px;margin-bottom:8px}.blockhead b{font-size:12px}.blockhead span{font-size:12px;color:var(--muted)}.blockhead .overline{color:var(--warning)}.block textarea{min-height:145px}.preview-border{margin-top:8px;border:1px dashed #9b684e;border-radius:9px;padding:9px;color:#eee2e9;font:12px/1.6 ui-monospace,monospace;white-space:pre-wrap;overflow-wrap:anywhere;max-height:380px;overflow:auto}.over-text{color:var(--warning);background:#513521}.line-note{color:var(--warning);font-size:11px;margin:8px 0 3px}.footerline{display:flex;justify-content:space-between;align-items:center;gap:8px;margin:12px 0}.bar{height:7px;background:#332d38;border-radius:30px;overflow:hidden;flex:1}.bar>div{height:100%;background:var(--accent);border-radius:20px;max-width:100%}.bar>div.over{background:var(--warning)}
 .identity-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.avatar-upload{display:flex;align-items:center;gap:10px;padding:10px 0;border-top:1px solid var(--line)}.avatar-upload:first-child{border:0}.avatar-preview{height:83px;width:83px;border-radius:11px;background:var(--panel3);overflow:hidden;display:grid;place-items:center;flex:none;font-size:36px}.avatar-preview img{width:100%;height:100%;object-fit:cover}.avatar-body{min-width:0;flex:1}.filelabel{display:inline-flex;justify-content:center;align-items:center;padding:7px 12px;border-radius:9px;background:var(--panel3);border:1px solid #504457;font-size:12px;min-height:36px;cursor:pointer}.filelabel input{display:none}.promptchips{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}.chip{background:var(--panel3);border:1px solid var(--line);border-radius:999px;font-size:12px;min-height:34px;padding:6px 10px;color:#d5c7da}.chip.on{background:#4f3b5a;border-color:#aa8ef5;color:white}.saveflag{font-size:11px;color:var(--muted);white-space:nowrap}.saved{color:var(--success)}.warntext{color:var(--warning)}.navrow{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.selectcheck{width:100%;display:flex;align-items:center;gap:9px;padding:10px;border:1px solid var(--line);border-radius:10px;margin-bottom:6px;color:var(--text)}.selectcheck input{width:20px;height:20px;accent-color:#b79fc7}.selectcheck small{color:var(--muted)}.selectcheck b{flex:1}.divider{border:0;border-top:1px solid var(--line);margin:16px 0}.toasty{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);max-width:calc(100% - 28px);background:#45374d;border:1px solid #796789;color:white;padding:11px 15px;border-radius:12px;z-index:200;box-shadow:0 7px 20px rgba(0,0,0,.4);font-size:13px;text-align:center}.savebar{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;align-items:center;margin:18px 0}.limitinfo{font-size:11px;color:var(--muted);margin:3px 0 9px}
 @media(min-width:600px){.cards{grid-template-columns:repeat(3,minmax(0,1fr))}.modegrid{grid-template-columns:repeat(3,1fr)}.tabs{top:79px}.shell{padding:0 22px 90px}}@media(max-width:365px){.shell{padding:0 11px 75px}.appbar{gap:6px}.brand{font-size:20px}.cardmeta{font-size:9px}.tab{padding:9px 10px}.section{padding:12px}.count{font-size:11px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Bot Studio login — dezelfde Cloudflare Worker als de Bot Tracker */
+.studio-gate{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px 15px;background:#121116}
+.studio-gate-card{width:min(100%,430px);background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:24px 20px}
+.studio-gate-title{font-weight:850;letter-spacing:-.035em;color:var(--pink);font-size:28px;margin:0 0 8px}
+.studio-gate-sub{font-size:13px;color:var(--muted);margin:0 0 22px}
+.studio-gate-row{display:flex;gap:8px;align-items:center}
+.studio-gate-row input{flex:1;min-width:0;width:auto;font-size:16px;background:#28232d;color:var(--text);border:1px solid #4d4354;border-radius:11px;padding:11px}
+.studio-gate-row button{flex:none;min-height:45px}
+.studio-gate-status{min-height:18px;margin:12px 0 0;font-size:12px;color:var(--warning)}
+.studio-gate-status.ok{color:var(--success)}
 </style>
 </head>
 <body>
-<div class="shell">
-<header class="appbar" id="apphead"><div class="brand"><span class="heart">💟</span> bot studio<span class="headsub">creator & archive</span></div><span class="saveflag" id="saveflag"></span><button class="iconbtn" type="button" data-nav="data" aria-label="Back-up en instellingen">⚙</button></header>
+<section id="studioGate" class="studio-gate" aria-label="Bot Studio aanmelden">
+  <div class="studio-gate-card">
+    <p class="studio-gate-title">💟 bot studio 🔒</p>
+    <p class="studio-gate-sub">Gebruik hetzelfde wachtwoord als je Bot Tracker.</p>
+    <form id="studioLoginForm" autocomplete="on">
+      <label class="fieldlabel" for="studioPassword">password</label>
+      <div class="studio-gate-row">
+        <input type="password" id="studioPassword" name="password" autocomplete="current-password" required autofocus>
+        <button type="submit" id="studioUnlockButton" class="primary">unlock</button>
+      </div>
+      <p class="studio-gate-status" id="studioGateStatus" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+<div class="shell" id="studioShell" hidden>
+<header class="appbar" id="apphead"><div class="brand"><span class="heart">💟</span> bot studio<span class="headsub">creator & archive</span></div><span class="saveflag" id="saveflag"></span><button class="iconbtn" id="studioLockButton" type="button" title="Studio vergrendelen" aria-label="Studio vergrendelen">🔒</button><button class="iconbtn" type="button" data-nav="data" aria-label="Back-up en instellingen">⚙</button></header>
 <main id="view"><div class="empty">Studio openen…</div></main>
 </div>
 <div id="toast" class="toasty" role="status" aria-live="polite" hidden></div>
@@ -58,9 +83,9 @@ function toast(s){const box=$('#toast');box.textContent=s;box.hidden=false;clear
 function deferSave(){setFlag('● bezig…');clearTimeout(saveTimer);saveTimer=setTimeout(saveCurrent,570)}
 function saveCurrent(){clearTimeout(saveTimer);if(!cur)return Promise.resolve();cur.updatedAt=now();const snapshot=clone(cur),store=currentKind==='project'?'projects':'identities';writing=writing.catch(()=>{}).then(()=>txRun(store,'put',snapshot));return writing.then(()=>{setFlag('✓ opgeslagen',true);if(store==='projects'){let ix=projects.findIndex(x=>x.id===snapshot.id);if(ix>=0)projects[ix]=snapshot;else projects.push(snapshot)}else{let ix=identities.findIndex(x=>x.id===snapshot.id);if(ix>=0)identities[ix]=snapshot;else identities.push(snapshot)}}).catch(e=>{setFlag('⚠ opslagfout');toast('Opslaan mislukt: '+e.message)})}
 async function flush(){if(saveTimer){clearTimeout(saveTimer);await saveCurrent()}else await writing.catch(()=>{})}
-function navHeader(){head.innerHTML=`<div class="brand"><span class="heart">💟</span> bot studio<span class="headsub">creator & archive</span></div><span class="saveflag" id="saveflag"></span><button class="iconbtn" data-nav="data" aria-label="Back-up en instellingen">⚙</button>`}
+function navHeader(){head.innerHTML=`<div class="brand"><span class="heart">💟</span> bot studio<span class="headsub">creator & archive</span></div><span class="saveflag" id="saveflag"></span><button class="iconbtn" id="studioLockButton" type="button" title="Studio vergrendelen" aria-label="Studio vergrendelen">🔒</button><button class="iconbtn" data-nav="data" aria-label="Back-up en instellingen">⚙</button>`}
 async function go(v,id,tab){await flush();cur=null;currentKind='';activeTab=tab||'write';viewName=v;navHeader();if(v==='catalog')renderCatalog();if(v==='choose')renderChoose();if(v==='identities')renderVault();if(v==='editor'){cur=projects.find(p=>p.id===id)||null;currentKind='project';if(cur)renderEditor();else renderCatalog()}if(v==='identity'){cur=identities.find(p=>p.id===id)||null;currentKind='identity';if(cur)renderIdentity();else renderVault()}if(v==='data')renderData();scrollTo({top:0,behavior:'instant'})}
-function bindHeaderBack(label, cbData){head.innerHTML=`<button class="iconbtn" data-nav="${cbData}" aria-label="Terug">←</button><div class="brand" style="font-size:19px">${esc(label)}<span class="headsub">bot studio 💟</span></div><span class="saveflag" id="saveflag">✓ opgeslagen</span><button class="iconbtn" data-nav="data" aria-label="Back-up">⚙</button>`}
+function bindHeaderBack(label, cbData){head.innerHTML=`<button class="iconbtn" data-nav="${cbData}" aria-label="Terug">←</button><div class="brand" style="font-size:19px">${esc(label)}<span class="headsub">bot studio 💟</span></div><span class="saveflag" id="saveflag">✓ opgeslagen</span><button class="iconbtn" id="studioLockButton" type="button" title="Studio vergrendelen" aria-label="Studio vergrendelen">🔒</button><button class="iconbtn" data-nav="data" aria-label="Back-up">⚙</button>`}
 function avatarFor(p){return p.avatars?.main||p.identityIds?.map(id=>identities.find(x=>x.id===id)?.avatars?.main).find(Boolean)||null}
 function imageBox(src,icon='👤'){return src?`<img src="${src}" alt="Character avatar" loading="lazy">`:`<span class="placeholder" aria-hidden="true">${icon}</span>`}
 function card(p,type){const src=type==='project'?avatarFor(p):p.avatars?.main;const name=type==='project'?(p.name||p.title||'Untitled character'):(p.name||'Unnamed identity');const summary=type==='project'?`${esc(p.type)} · ${date(stamp(p))}`:`Passport · ${date(stamp(p))}`;return `<button class="card" data-open-${type}="${esc(p.id)}"><div class="cardimage">${imageBox(src)}<span class="pill" style="position:absolute;top:8px;left:8px;background:#211e26d9">${type==='project'?esc(p.status):'🪪 Identity'}</span></div><div class="cardbody"><div class="cardtitle">${esc(name)}</div><div class="cardmeta"><span>${summary}</span><span>↗</span></div></div></button>`}
@@ -89,7 +114,7 @@ function refreshCounts(){fieldSpecs.forEach(([id,,base])=>{let e=document.getEle
 function renderVault(){viewName='identities';navHeader();root.innerHTML=`<div class="row spread"><div><p class="eyebrow">Identity vault</p><h1 style="margin:0">Character passports 🪪</h1><p class="hint">${n(identities.length)} vaste identities · avatars & voices</p></div><button class="primary" data-action="newidentity">＋ Passport</button></div><div class="navrow" style="margin:12px 0"><button class="button tiny" data-nav="catalog">← Catalog</button></div>${identities.length?`<div class="cards">${identities.slice().sort((a,b)=>stamp(b).localeCompare(stamp(a))).map(i=>card(i,'identity')).join('')}</div>`:`<div class="empty">👤<br><b>Nog geen paspoorten</b><p class="hint">Maak bijvoorbeeld een vaste identity voor Kade, herbruikbaar in meerdere bots.</p></div>`}`}
 function renderIdentity(){viewName='identity';bindHeaderBack('character passport','identities');const linked=projects.filter(p=>p.identityIds?.includes(cur.id));root.innerHTML=`<div class="editorheading"><div class="edavatar">${imageBox(cur.avatars?.main)}</div><div class="edtitle"><p class="eyebrow">🪪 Character Passport</p><h1>${esc(cur.name||'Unnamed identity')}</h1><p class="hint">Gebruikt in ${linked.length} bot(s)</p></div></div><section class="section"><h2>Identity</h2>${fInput('name','Name','e.g. Kade')}${fInput('aliases','Aliases','Kade - MBF, MBF…')}<div class="two"><div>${fInput('age','Default age (optional)','27')}</div><div>${fInput('voiceName','Default voice name','Voice name')}</div></div>${textPlain('appearance','Fixed face / appearance reference','Hair, eyes, jawline, skin texture…')}${fInput('voiceId','Voice ID or label','Optional ID / voice name')}${textPlain('voiceNotes','Voice notes','Deep, raspy, soft spoken…')}</section><section class="section"><h2>Face references</h2>${avatarSlots('identity')}</section><section class="section"><h2>🎨 Avatar prompt builder</h2><p class="hint">Selecteer onderdelen. Je identity-beschrijving wordt gecombineerd met de chips, zonder je vaste uiterlijk te veranderen.</p>${textPlain('promptBase','Base prompt additions','Your own reusable base prompt…')}<div class="promptchips">${promptChips.map(c=>`<button class="chip ${cur.selectedChips?.includes(c)?'on':''}" data-promptchip="${esc(c)}" aria-pressed="${cur.selectedChips?.includes(c)?'true':'false'}">${esc(c)}</button>`).join('')}</div><div class="block"><div class="fieldtop"><b>Generated prompt</b><button class="primary tiny" data-action="copyprompt">📋 Copy prompt</button></div><p id="promptoutput" style="white-space:pre-wrap;overflow-wrap:anywhere;margin:10px 0 0;font-size:13px">${esc(buildPrompt())||'<span class="hint">Voeg appearance, base prompt of chips toe.</span>'}</p></div></section><section class="section"><h2>🔗 Your tools</h2>${fInput('generatorUrl','Image generator shortcut (URL)','https://...')}${fInput('editorUrl','Image editor shortcut (URL)','https://...')}<div class="actions">${safeUrl(cur.generatorUrl)?`<a class="button tiny" href="${esc(safeUrl(cur.generatorUrl))}" target="_blank" rel="noopener noreferrer">↗ Generator</a>`:''}${safeUrl(cur.editorUrl)?`<a class="button tiny" href="${esc(safeUrl(cur.editorUrl))}" target="_blank" rel="noopener noreferrer">↗ Editor</a>`:''}</div></section><section class="section"><h2>Linked bots</h2>${linked.length?linked.map(p=>`<button class="button" data-open-project="${esc(p.id)}" style="margin:3px">${esc(p.name||p.title||'Untitled')} ↗</button>`).join(''):'<p class="hint">Koppel dit passport via Cast & User in een bot.</p>'}</section><div class="savebar"><button class="button" data-action="save">💾 Save now</button><button class="danger tiny" data-action="deleteidentity">Delete passport</button></div>`;setFlag('✓ opgeslagen',true)}
 function buildPrompt(){return [cur?.appearance,cur?.promptBase,...(cur?.selectedChips||[])].filter(Boolean).join(', ')}
-function renderData(){viewName='data';navHeader();root.innerHTML=`<p class="eyebrow">💾 Data & backup</p><h1>Keep your archive safe</h1><div class="section"><h2>Export backup</h2><p class="hint">Download één JSON-bestand met alle creaties, tekstversies, paspoorten en opgeslagen afbeeldingen. Maak regelmatig een kopie buiten je browser.</p><button class="primary" data-action="export">↓ Export full backup</button></div><div class="section"><h2>Import backup</h2><p class="hint">Voeg creaties en identities uit een eerder geëxporteerd Bot Studio JSON-bestand samen met de huidige gegevens. Bij gelijke ID's behoudt de app je bestaande gegevens.</p><label class="filelabel">＋ Choose backup file<input type="file" id="importFile" accept=".json,application/json"></label><p class="hint">Geen verbinding met de Stats Tracker. De oorspronkelijke tracker of zijn data worden niet gewijzigd.</p></div><div class="section"><h2>Storage & privacy</h2><p class="hint">De studio gebruikt IndexedDB op dit apparaat, in deze browser en onder deze website-adres. Geen account, geen server en geen automatische cloudsynchronisatie. Browsergegevens wissen kan je archief verwijderen. De opslag is dus géén vervanging voor regelmatige back-ups.</p><p class="hint">Voor betrouwbaar gebruik op je iPhone: plaats dit bestand op een eigen HTTPS-webadres en voeg die pagina toe aan je beginscherm. Open niet uitsluitend een losse lokale HTML-file in Bestanden.</p><div class="actions"><button class="button tiny" data-nav="catalog">← Catalog</button><button class="button tiny" data-nav="identities">🪪 Identity Vault</button></div></div>`}
+function renderData(){viewName='data';navHeader();root.innerHTML=`<p class="eyebrow">💾 Data & backup</p><h1>Keep your archive safe</h1><div class="section"><h2>Export backup</h2><p class="hint">Download één JSON-bestand met alle creaties, tekstversies, paspoorten en opgeslagen afbeeldingen. Maak regelmatig een kopie buiten je browser.</p><button class="primary" data-action="export">↓ Export full backup</button></div><div class="section"><h2>Import backup</h2><p class="hint">Voeg creaties en identities uit een eerder geëxporteerd Bot Studio JSON-bestand samen met de huidige gegevens. Bij gelijke ID's behoudt de app je bestaande gegevens.</p><label class="filelabel">＋ Choose backup file<input type="file" id="importFile" accept=".json,application/json"></label><p class="hint">Geen verbinding met de Stats Tracker. De oorspronkelijke tracker of zijn data worden niet gewijzigd.</p></div><div class="section"><h2>Storage & privacy</h2><p class="hint">De studio gebruikt IndexedDB op dit apparaat, in deze browser en onder deze website-adres. Je wachtwoord wordt gecontroleerd via dezelfde Cloudflare Worker als de Bot Tracker. Je creaties en avatars worden niet via die Worker opgeslagen: ze blijven lokaal in IndexedDB. Er is nog geen automatische cloudsynchronisatie. Browsergegevens wissen kan je archief verwijderen. De opslag is dus géén vervanging voor regelmatige back-ups.</p><p class="hint">Voor betrouwbaar gebruik op je iPhone: plaats dit bestand op een eigen HTTPS-webadres en voeg die pagina toe aan je beginscherm. Open niet uitsluitend een losse lokale HTML-file in Bestanden.</p><div class="actions"><button class="button tiny" data-nav="catalog">← Catalog</button><button class="button tiny" data-nav="identities">🪪 Identity Vault</button></div></div>`}
 function updateCur(prop,val){if(!cur)return;cur[prop]=val;deferSave()}
 function formatSelection(ta,mode){if(!ta)return;ta.focus();let a=ta.selectionStart,b=ta.selectionEnd,value=ta.value,left=mode==='quote'?'"':'*',right=mode==='quote'?'"':'*';ta.value=value.slice(0,a)+left+value.slice(a,b)+right+value.slice(b);ta.setSelectionRange(a+left.length,b+left.length);ta.dispatchEvent(new Event('input',{bubbles:true}))}
 async function copyText(str){try{if(navigator.clipboard?.writeText){await navigator.clipboard.writeText(str)}else throw Error('fallback');toast('📋 Gekopieerd!')}catch(e){const ta=document.createElement('textarea');ta.value=str;ta.style.position='fixed';ta.style.left='-9999px';document.body.appendChild(ta);ta.select();try{let ok=document.execCommand('copy');toast(ok?'📋 Gekopieerd!':'Kopiëren niet beschikbaar op deze pagina')}catch(e){toast('Kopiëren niet beschikbaar — selecteer de tekst zelf')}ta.remove()}}
@@ -137,6 +162,85 @@ if(t.id==='importFile'&&t.files?.[0])await importBackup(t.files[0]);
 });
 window.addEventListener('beforeunload',e=>{if(saveTimer){e.preventDefault();e.returnValue=''}});
 (async()=>{try{db=await openDB();projects=await all('projects');identities=await all('identities');renderCatalog()}catch(e){root.innerHTML=`<div class="empty"><h2>Opslag niet beschikbaar</h2><p>Deze app heeft IndexedDB nodig. Open hem via HTTPS in Safari of een andere moderne browser. De gegevens van je Bot Tracker blijven onaangeraakt.</p><small>${esc(e.message)}</small></div>`;setFlag('⚠ fout')}})();
+})();
+</script>
+<script>
+(() => {
+  'use strict';
+  const WORKER = 'https://bot-events.nnharmony.workers.dev';
+  const SESSION_KEY = 'botStudioWorkerPasswordSession:v1';
+  const REMEMBER_KEY = 'botStudioWorkerPasswordRemember:v1';
+  const REMEMBER_MS = 7 * 24 * 60 * 60 * 1000;
+  const gate = document.getElementById('studioGate');
+  const shell = document.getElementById('studioShell');
+  const form = document.getElementById('studioLoginForm');
+  const field = document.getElementById('studioPassword');
+  const button = document.getElementById('studioUnlockButton');
+  const status = document.getElementById('studioGateStatus');
+  let trying = false;
+  const readSaved = () => {
+    try {
+      const session = sessionStorage.getItem(SESSION_KEY);
+      if (session) return session;
+    } catch (_) {}
+    try {
+      const stored = JSON.parse(localStorage.getItem(REMEMBER_KEY) || 'null');
+      if (stored && typeof stored.key === 'string' && stored.key && Number(stored.expiresAt) > Date.now()) return stored.key;
+    } catch (_) {}
+    return '';
+  };
+  const forget = () => {
+    try { sessionStorage.removeItem(SESSION_KEY); } catch (_) {}
+    try { localStorage.removeItem(REMEMBER_KEY); } catch (_) {}
+  };
+  const remember = password => {
+    try { sessionStorage.setItem(SESSION_KEY, password); } catch (_) {}
+    try { localStorage.setItem(REMEMBER_KEY, JSON.stringify({key:password, expiresAt:Date.now()+REMEMBER_MS})); } catch (_) {}
+  };
+  async function unlock(password) {
+    if (trying || !password) return;
+    trying = true;
+    button.disabled = true;
+    status.textContent = 'unlocking…';
+    try {
+      const response = await fetch(WORKER + '/unlock', {
+        method:'POST',
+        headers: {'x-events-key':password,'x-events-profile':'main'},
+        cache:'no-store'
+      });
+      if (!response.ok) {
+        let message = 'Wrong password';
+        try { const result = await response.json(); message = result.error || message; } catch (_) {}
+        throw new Error(message);
+      }
+      remember(password);
+      field.value = '';
+      gate.hidden = true;
+      shell.hidden = false;
+      status.textContent = '';
+    } catch (error) {
+      forget();
+      gate.hidden = false;
+      shell.hidden = true;
+      status.textContent = error instanceof TypeError ? 'Kan Cloudflare niet bereiken. Controleer je verbinding.' : String(error.message || 'Unlock failed');
+    } finally {
+      trying = false;
+      button.disabled = false;
+    }
+  }
+  form.addEventListener('submit', e => { e.preventDefault(); unlock(field.value.trim()); });
+  document.addEventListener('click', e => {
+    if (e.target.closest('#studioLockButton')) {
+      forget();
+      field.value = '';
+      shell.hidden = true;
+      gate.hidden = false;
+      status.textContent = '';
+      field.focus();
+    }
+  });
+  const previous = readSaved();
+  if (previous) unlock(previous); else field.focus();
 })();
 </script>
 </body>
