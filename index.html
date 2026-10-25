@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#121116">
+<meta name="theme-color" content="#2c2932">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<title>💟Bot Studio</title>
+<title>🫦Creator Studio</title>
 <style>
 :root{color-scheme:dark;--bg:#121116;--panel:#1b191f;--panel2:#211e26;--panel3:#29252e;--line:#39313f;--text:#f4f0f5;--muted:#aaa2ae;--accent:#b79fc7;--pink:#d596f7;--soft:rgba(183,159,199,.17);--warning:#ffb36f;--success:#8bdbc0;font:16px system-ui,-apple-system,"Segoe UI",sans-serif}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);min-width:0}button,input,textarea,select{font:inherit}button{cursor:pointer}button:disabled{opacity:.4;cursor:not-allowed}button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px solid var(--pink);outline-offset:2px}a{color:var(--accent)}[hidden]{display:none!important}
@@ -26,6 +26,90 @@ label.fieldlabel{display:block;font-size:12px;font-weight:800;color:#e0d4e5;marg
 .studio-gate-row button{flex:none;min-height:45px}
 .studio-gate-status{min-height:18px;margin:12px 0 0;font-size:12px;color:var(--warning)}
 .studio-gate-status.ok{color:var(--success)}
+
+/* Bot Studio — layout + visual refinement, round 1 (25 Oct 2026)
+   Reference palette: deep plum, muted mauve fields, dusty-rose accents.
+   Use available system fonts; no external font files or requests. */
+:root{
+  --bg:#2c2932;
+  --panel:#352f3b;
+  --panel2:#4b4353;
+  --panel3:#504657;
+  --line:#73677d;
+  --text:#f3e8f1;
+  --muted:#bdb0c7;
+  --accent:#baa7cd;
+  --pink:#c2749b;
+  --soft:rgba(188,155,202,.19);
+  font-family:"Avenir Next","Avenir","Century Gothic","Calibri","Trebuchet MS",sans-serif;
+  font-weight:400;
+}
+body{background:var(--bg);font-size:14px;font-weight:400;letter-spacing:.01em}
+button,input,textarea,select{font-family:inherit;font-weight:400;letter-spacing:.005em}
+.appbar{background:rgba(44,41,50,.98);border-bottom-color:rgba(180,155,192,.21)}
+.brand{letter-spacing:-.025em;color:var(--pink);font-weight:650}
+.headsub{color:var(--muted)}
+h1,h2,h3{letter-spacing:0;font-weight:650}
+h2{color:#e9d7e6}
+h3,.fieldlabel{color:#e6d3e3}
+.section{background:var(--panel);border-color:rgba(183,160,196,.3);border-radius:16px}
+.section.soft,.block{background:#393240}
+.card{background:var(--panel);border-color:rgba(183,160,196,.3)}
+.cardimage{background:var(--panel2)}
+.iconbtn,.ghost,.button,.primary,.danger,.tab{
+  border-radius:13px;
+  background:#433b4b;
+  border-color:#6e6177;
+  color:var(--text);
+  font-weight:550;
+}
+.primary,.tab.active{background:#57485f;border-color:#a891b6;color:#f5e7f4}
+.primary{font-weight:650}
+.tab{font-size:12px;min-height:42px;padding:9px 13px;letter-spacing:.01em}
+.tab.active{box-shadow:inset 0 -2px 0 rgba(202,147,177,.7)}
+.tabs{background:var(--bg);gap:7px;top:79px;padding:4px 0 9px}
+.pill{background:#504657;border-color:#82748c;color:#ecdaee}
+.ctrl,textarea,select,input[type="text"],input[type="url"],input[type="number"],input[type="search"]{
+  background:#4b4353;
+  border:1.5px solid #9885a5;
+  border-radius:11px;
+  color:#f6eaf3;
+  font-size:16px;
+  font-weight:400;
+}
+input::placeholder,textarea::placeholder{color:#c5b7c9;opacity:.8}
+textarea{line-height:1.55}
+label.fieldlabel{font-size:12px;font-weight:600;letter-spacing:.005em}
+.fieldtop{margin-bottom:6px}
+.fieldtop .fieldlabel{margin:0}
+.field{margin-bottom:19px}
+/* A single-line title, shorter introduction, and two equally spacious writing areas. */
+.field[data-field="title"] input[data-prop="title"]{height:45px;min-height:45px;padding:9px 12px}
+.field[data-field="introduction"] textarea{height:102px;min-height:102px}
+.field[data-field="greeting"] textarea,
+.field[data-field="background"] textarea{height:350px;min-height:300px}
+.field[data-field="personality"] textarea,
+.field[data-field="appearance"] textarea{height:175px;min-height:130px}
+.field[data-field="story"] textarea{height:230px;min-height:180px}
+.textactions{margin:7px 0 0;gap:7px}
+.textactions button{font-size:12px;min-height:34px;border-radius:10px;padding:6px 10px}
+.count{font-size:12px;font-weight:500;color:#dbcce0}
+.limitbox input{background:#403748;border:1px solid #746780;border-radius:9px;font-size:12px}
+.autosave-help{color:var(--muted);font-size:11px;margin:7px 0 5px}
+.editor-tools{gap:7px}
+.editor-tools .button{border-radius:11px}
+.studio-gate{background:var(--bg)}
+.studio-gate-card{background:var(--panel);border-color:var(--line)}
+.studio-gate-title{color:var(--pink)}
+@media(max-width:480px){
+  .shell{padding-left:13px;padding-right:13px}
+  .section{padding:13px}
+  .field[data-field="greeting"] textarea,
+  .field[data-field="background"] textarea{height:340px;min-height:280px}
+  .tab{font-size:12px;padding:10px 12px}
+  .editor-tools .button{min-height:37px}
+}
+
 </style>
 </head>
 <body>
@@ -54,7 +138,7 @@ const DB_NAME='poly-bot-studio-v1', DB_VERSION=1;
 const statuses=['Idea','Draft','Rewrite','Created','Fixed','Archived'];
 const kinds=['Regular','Theme','Multi'];
 const fieldSpecs=[
-  ['title','Bot title',100,'Titel voor PolyBuzz'],
+  ['title','Bot title',36,'Titel voor PolyBuzz'],
   ['introduction','Introduction',200,'Korte introductie / hook'],
   ['greeting','Greeting',3000,'Je openingsscène en eerste dialoog'],
   ['background','Background',10000,'De hoofdachtergrond van je character'],
@@ -96,10 +180,10 @@ function filteredProjects(){let arr=projects.filter(p=>(filter==='All'||p.status
 function catalogItems(arr){return arr.length?`<div class="cards" id="catalogCards">${arr.slice(0,visibleCount).map(p=>card(p,'project')).join('')}</div>${arr.length>visibleCount?`<button class="button showmore" id="moreCards">Meer laden (${n(arr.length-visibleCount)} over)</button>`:''}`:`<div class="empty"><div style="font-size:40px">💟</div><b>Nog geen creaties gevonden</b><p class="hint" style="margin:9px 0 0">Begin met + Create of pas je filter aan.</p></div>`}
 function renderChoose(){bindHeaderBack('Create new','catalog');root.innerHTML=`<p class="eyebrow">💟 New creation</p><h1>Wat wil je maken?</h1><p class="hint">Je kunt meteen opslaan, ook met lege tekstvelden.</p><div class="modegrid"><button class="mode" data-create="Regular">🖤 Regular<span>Gewone bot met eigen verhaal, user role en dialogen.</span></button><button class="mode" data-create="Theme">💟 Theme<span>Extra plek voor thema-vereisten en user role.</span></button><button class="mode" data-create="Multi">👥 Multi<span>Meerdere personages en gezamenlijke background.</span></button></div><div class="section soft"><p class="hint" style="margin:0">Alle creaties komen in dezelfde catalogus. Je kunt hun type later nog wijzigen.</p></div>`}
 function renderEditor(){viewName='editor';bindHeaderBack('character editor','catalog');if(!cur.dialogue?.length)cur.dialogue=[{id:uid(),label:'',text:''}];cur.limits=cur.limits||{};cur.avatars=cur.avatars||{main:null,spicy:null,reserve:null};cur.identityIds=cur.identityIds||[];cur.relations=cur.relations||{};
-let title=cur.name||cur.title||'Untitled character';root.innerHTML=`<div class="editorheading"><div class="edavatar">${imageBox(avatarFor(cur))}</div><div class="edtitle"><p class="eyebrow" style="margin-bottom:4px">${esc(cur.type)} · ${esc(cur.status)}</p><h1>${esc(title)}</h1><p class="hint">Laatste wijziging: ${date(cur.updatedAt)}</p></div></div><div class="row"><button class="button tiny" data-action="saveversion">＋ Save version</button><button class="button tiny" data-action="save">💾 Save now</button><button class="button tiny" data-action="rewrite">↻ New rewrite</button></div><nav class="tabs" aria-label="Editor tabs">${[['write','✍️ Write'],['dialogue','💬 Dialogue'],['cast','💜 Cast & User'],['avatars','🖼️ Avatars'],['versions','🕒 Versions']].map(([id,l])=>`<button class="tab ${activeTab===id?'active':''}" data-tab="${id}">${l}</button>`).join('')}</nav><div id="tabbody">${editorTab()}</div>`;setFlag('✓ opgeslagen',true);refreshCounts()}
+let title=cur.name||cur.title||'Untitled character';root.innerHTML=`<div class="editorheading"><div class="edavatar">${imageBox(avatarFor(cur))}</div><div class="edtitle"><p class="eyebrow" style="margin-bottom:4px">${esc(cur.type)} · ${esc(cur.status)}</p><h1>${esc(title)}</h1><p class="hint">Laatste wijziging: ${date(cur.updatedAt)}</p></div></div><div class="row editor-tools"><button class="button tiny" data-action="save" title="Bewaar de huidige wijzigingen (die worden ook automatisch opgeslagen)">Save changes</button><button class="button tiny" data-action="saveversion" title="Bewaar een aparte versie die je later kunt terugzetten">Save version</button><button class="button tiny" data-action="rewrite">New rewrite</button></div><p class="autosave-help">Auto-save staat aan · Save version bewaart een afzonderlijk herstelpunt.</p><nav class="tabs" aria-label="Editor tabs">${[['write','💟 •story'],['dialogue','💬 •dialogue'],['cast','🆔 •char&amp;user'],['avatars','👤 •avatar'],['versions','🔤 •versions']].map(([id,l])=>`<button class="tab ${activeTab===id?'active':''}" data-tab="${id}">${l}</button>`).join('')}</nav><div id="tabbody">${editorTab()}</div>`;setFlag('✓ opgeslagen',true);refreshCounts()}
 function editorTab(){if(activeTab==='write')return writeTab();if(activeTab==='dialogue')return dialogueTab();if(activeTab==='cast')return castTab();if(activeTab==='avatars')return avatarTab();if(activeTab==='versions')return versionsTab();return ''}
 function fInput(prop,label,ph=''){return `<div class="field"><label class="fieldlabel" for="f_${prop}">${esc(label)}</label><input type="text" id="f_${prop}" data-prop="${prop}" value="${esc(cur[prop]||'')}" placeholder="${esc(ph)}"></div>`}
-function textField(id,label,base,ph){let lim=Number(cur.limits?.[id]??base),value=String(cur[id]||'');return `<div class="field" data-field="${id}"><div class="fieldtop"><label class="fieldlabel" for="f_${id}">${esc(label)}</label><div class="limitbox"><span class="count" id="cnt_${id}">${n(value.length)} / ${lim?n(lim):'∞'}</span><input aria-label="Limiet ${esc(label)}" title="Eigen tekenlimiet (0 = geen)" type="number" inputmode="numeric" min="0" max="1000000" value="${lim}" data-limit="${id}"></div></div><textarea spellcheck="true" id="f_${id}" data-prop="${id}" placeholder="${esc(ph)}">${esc(value)}</textarea><div class="textactions"><button class="button" data-copyfield="${id}">📋 Copy</button><button class="button" data-format="asterisk" data-target="f_${id}" title="Selectie tussen asterisks">* Action *</button><button class="button" data-format="quote" data-target="f_${id}">“ Dialogue ”</button></div></div>`}
+function textField(id,label,base,ph){let lim=Number(cur.limits?.[id]??base),value=String(cur[id]||'');const single=id==='title';const entry=single?`<input type="text" spellcheck="true" id="f_${id}" data-prop="${id}" value="${esc(value)}" placeholder="${esc(ph)}">`:`<textarea spellcheck="true" id="f_${id}" data-prop="${id}" placeholder="${esc(ph)}">${esc(value)}</textarea>`;return `<div class="field" data-field="${id}"><div class="fieldtop"><label class="fieldlabel" for="f_${id}">${esc(label)}</label><div class="limitbox"><span class="count" id="cnt_${id}">${n(value.length)} / ${lim?n(lim):'∞'}</span><input aria-label="Limiet ${esc(label)}" title="Eigen tekenlimiet (0 = geen)" type="number" inputmode="numeric" min="0" max="1000000" value="${lim}" data-limit="${id}"></div></div>${entry}<div class="textactions"><button class="button" data-copyfield="${id}">Copy</button>${single?'':`<button class="button" data-format="asterisk" data-target="f_${id}" title="Selectie tussen asterisks">* Action *</button><button class="button" data-format="quote" data-target="f_${id}">“ Dialogue ”</button>`}</div></div>`}
 function writeTab(){return `<section class="section"><div class="section-title"><h2>Character project</h2><span class="pill purple">${esc(cur.type)}</span></div>${fInput('name','Project name','Naam in jouw catalogus')}<div class="two"><div class="field"><label class="fieldlabel">Type</label><select data-prop="type">${kinds.map(x=>`<option ${cur.type===x?'selected':''}>${x}</option>`).join('')}</select></div><div class="field"><label class="fieldlabel">Status</label><select data-prop="status">${statuses.map(x=>`<option ${cur.status===x?'selected':''}>${x}</option>`).join('')}</select></div></div>${cur.type==='Theme'?fInput('theme','PolyBuzz theme / requirements','Thema, opdracht of voorwaarden'):''}${fInput('categories','Your categories','mafia, dark romance, first love…')}${fInput('tags','PolyBuzz tags — eigen registratie','Typ tags, gescheiden door komma’s')}<p class="hint">PolyBuzz-tags zijn hier vrij invoerbaar, nog geen gesynchroniseerde officiële taglijst.</p></section><section class="section"><div class="section-title"><h2>Write your bot</h2><span class="hint">Live tekentellers · onbeperkt typen</span></div><p class="limitinfo">Limieten zijn voorlopig instelbare voorbeeldwaarden, geen geverifieerde PolyBuzz-waarden.</p>${fieldSpecs.map(([id,label,lim,ph])=>textField(id,label,lim,ph)).join('')}</section><section class="section"><h2>Tracker link</h2>${fInput('cid','PolyBuzz CID','Plak je character-ID')}${fInput('trackerUrl','Link naar bot in tracker / PolyBuzz','https://...')}${safeUrl(cur.trackerUrl)?`<a class="button tiny" href="${esc(safeUrl(cur.trackerUrl))}" target="_blank" rel="noopener noreferrer">↗ Open gekoppelde link</a>`:''}<p class="hint">Handmatige koppeling in V1; je Stats Tracker blijft ongewijzigd.</p></section>`}
 function dialogueStats(){let pos=0,limit=Math.max(0,Number(cur.dialogueLimit??10000));return cur.dialogue.map((b,i)=>{let start=pos;pos+=String(b.text||'').length;let fit=Math.max(0,Math.min(String(b.text||'').length,limit-start));return {b,i,start,end:pos,fit,total:String(b.text||'').length,overflow:pos>limit}})}
 function dialogueTab(){const stats=dialogueStats(), total=stats.at(-1)?.end||0,lim=Number(cur.dialogueLimit??10000),over=total>lim;return `<section class="section"><div class="section-title"><h2>Dialogue Style</h2><div class="limitbox"><span class="count ${over?'warn':''}" id="dialogueTotal">${n(total)} / ${n(lim)}</span><input type="number" min="0" max="1000000" value="${lim}" data-dialoguelimit="1" aria-label="Dialogue Style totaal limiet" title="Totale PolyBuzz-limiet"></div></div><p class="hint">Ieder blok wordt afzonderlijk gekopieerd. Je mag doorschrijven boven de grens.</p><div class="footerline"><div class="bar"><div id="dialoguebar" style="width:${lim?Math.min(100,total/lim*100):100}%" class="${over?'over':''}"></div></div></div><div id="overNotice">${over?`<div class="inline-warning">⚠ ${n(total-lim)} tekens boven je ingestelde limiet. Oranje markering toont precies waar de grens valt.</div>`:''}</div><div id="dialogueList">${stats.map(s=>blockHtml(s)).join('')}</div><button class="primary" data-action="addblock" style="width:100%;margin-top:6px">＋ Add dialogue block</button></section>`}
